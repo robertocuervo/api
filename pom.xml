@@ -5,12 +5,19 @@
 	<artifactId>api</artifactId>
 	<version>2.0.0-SNAPSHOT</version>
 	<packaging>eclipse-plugin</packaging>
+	<name>Api library</name>
+	<description>Api library for tycho maven test project</description>
+
+	<scm>
+		<connection>scm:git:git@github.com:robertocuervo/api.git</connection>
+		<url>https://github.com/robertocuervo/api</url>
+	</scm>
 
 	<parent>
 		<groupId>ch.netstal.roberto.osgi.parent</groupId>
 		<artifactId>MavenParent</artifactId>
 		<version>1.0.0</version>
-		<relativePath>../MavenParent/pom.xml</relativePath>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<dependencies>
@@ -20,4 +27,30 @@
 			<version>3.3.2</version>
 		</dependency>
 	</dependencies>
+	
+	<repositories>
+		<repository>
+			<id>tychoTimer</id>
+			<url>http://localhost:8081/nexus/content/repositories/tychoTimer</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+
+
+	<distributionManagement>
+		<repository>
+			<id>tychoTimer</id>
+			<url>http://localhost:8081/nexus/content/repositories/tychoTimer</url>
+		</repository>
+		<snapshotRepository>
+			<id>tychoTimer-snapshots</id>
+			<url>http://localhost:8081/nexus/content/repositories/tychoTimer-snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>
